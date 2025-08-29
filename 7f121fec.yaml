@@ -1,0 +1,68 @@
+# Конфигурация для деплоя приложения Doge of House на Timeweb Apps
+name: doge-of-house
+description: "Приложение приюта для собак с удаленным уходом и видеонаблюдением"
+
+# Тип приложения - статическое веб-приложение
+type: static
+
+# Точка входа - главная страница
+entrypoint: index.html
+
+# Директория со статическими файлами
+static_dir: .
+
+# Переменные окружения
+env:
+  NODE_ENV: production
+  APP_NAME: "Doge of House"
+  VERSION: "1.0.0"
+
+# Настройки сборки (если требуется)
+build:
+  commands: []
+
+# Настройки деплоя
+deploy:
+  # Игнорируемые файлы при деплое
+  ignore:
+    - ".git"
+    - "*.md"
+    - ".DS_Store"
+    - "node_modules"
+    - "*.log"
+
+# Настройки домена
+domain:
+  # Можно указать кастомный домен
+  # custom: "doge-house.example.com"
+
+# Настройки кеширования
+cache:
+  static_files: 
+    max_age: 86400  # 1 день
+  html_files:
+    max_age: 3600   # 1 час
+
+# Настройки безопасности
+security:
+  headers:
+    X-Frame-Options: SAMEORIGIN
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: "1; mode=block"
+
+# Лимиты ресурсов
+resources:
+  memory: 128MB
+  cpu: 0.1
+
+# Настройки мониторинга
+monitoring:
+  health_check:
+    path: /
+    timeout: 30s
+    interval: 60s
+
+# Настройки логирования
+logging:
+  level: info
+  format: json
