@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doge of House - Удаленный уход за собаками</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <div class="logo-icon">🐕</div>
+                    <h1 class="logo-text">Doge of House</h1>
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn active" data-section="home">Главная</button>
+                    <button class="nav-btn" data-section="dogs">Собаки</button>
+                    <button class="nav-btn" data-section="subscriptions">Абонементы</button>
+                    <button class="nav-btn" data-section="jobs">Вакансии</button>
+                    <button class="nav-btn" data-section="donations">Донаты</button>
+                    <button class="nav-btn" data-section="profile">Профиль</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Home Section -->
+            <section class="section active" id="home">
+                <div class="hero">
+                    <h2 class="hero__title">Удаленный уход за собаками</h2>
+                    <p class="hero__subtitle">Профессиональный уход за приютскими собаками с видеонаблюдением 24/7</p>
+                    <div class="hero__buttons">
+                        <button class="btn btn--primary btn--lg" data-section="dogs">Выбрать собаку</button>
+                        <button class="btn btn--secondary btn--lg" data-section="subscriptions">Абонементы</button>
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <div class="features__grid">
+                        <div class="feature-card">
+                            <div class="feature-card__icon">📹</div>
+                            <h3 class="feature-card__title">Видеонаблюдение 24/7</h3>
+                            <p class="feature-card__text">Наблюдайте за вашей собакой в режиме реального времени</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">🍽️</div>
+                            <h3 class="feature-card__title">Удаленное кормление</h3>
+                            <p class="feature-card__text">Покормите собаку одним нажатием кнопки</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">👨‍⚕️</div>
+                            <h3 class="feature-card__title">Профессиональный персонал</h3>
+                            <p class="feature-card__text">Опытные специалисты заботятся о вашем питомце</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon">💰</div>
+                            <h3 class="feature-card__title">Честная оплата</h3>
+                            <p class="feature-card__text">Персонал получает зарплату за каждую услугу</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dogs Section -->
+            <section class="section" id="dogs">
+                <div class="section__header">
+                    <h2 class="section__title">Наши собаки</h2>
+                    <p class="section__subtitle">Выберите питомца для удаленного ухода</p>
+                    <div class="filter-buttons">
+                        <button class="btn btn--outline filter-btn active" data-filter="all">Все собаки</button>
+                        <button class="btn btn--outline filter-btn" data-filter="needs-attention">Не баловали сегодня</button>
+                        <button class="btn btn--outline filter-btn" data-filter="available">Доступные</button>
+                    </div>
+                </div>
+                <div class="dogs-grid" id="dogsGrid">
+                    <!-- Dogs will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Dog Profile Section -->
+            <section class="section" id="dogProfile">
+                <div class="dog-profile" id="dogProfileContent">
+                    <!-- Dog profile will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Subscriptions Section -->
+            <section class="section" id="subscriptions">
+                <div class="section__header">
+                    <h2 class="section__title">Абонементы</h2>
+                    <p class="section__subtitle">Выберите подходящий план ухода</p>
+                </div>
+                <div class="subscriptions-grid" id="subscriptionsGrid">
+                    <!-- Subscriptions will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Jobs Section -->
+            <section class="section" id="jobs">
+                <div class="section__header">
+                    <h2 class="section__title">Вакансии</h2>
+                    <p class="section__subtitle">Найдите работу в нашем приюте</p>
+                </div>
+                <div class="jobs-content">
+                    <div class="jobs-grid" id="jobsGrid">
+                        <!-- Jobs will be populated by JavaScript -->
+                    </div>
+                    <div class="staff-section">
+                        <h3>Наш персонал</h3>
+                        <div class="staff-grid" id="staffGrid">
+                            <!-- Staff will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donations Section -->
+            <section class="section" id="donations">
+                <div class="section__header">
+                    <h2 class="section__title">Пожертвования</h2>
+                    <p class="section__subtitle">Поддержите приют и наших питомцев</p>
+                </div>
+                
+                <div class="donations-content">
+                    <div class="quick-donations">
+                        <h3>Быстрые пожертвования</h3>
+                        <div class="donation-buttons">
+                            <button class="btn btn--secondary" data-amount="500">500₽</button>
+                            <button class="btn btn--secondary" data-amount="1000">1000₽</button>
+                            <button class="btn btn--secondary" data-amount="2500">2500₽</button>
+                            <button class="btn btn--secondary" data-amount="5000">5000₽</button>
+                        </div>
+                        <div class="custom-donation">
+                            <input type="number" class="form-control" id="customAmount" placeholder="Введите сумму">
+                            <button class="btn btn--primary" id="donateCustom">Пожертвовать</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section class="section" id="profile">
+                <div class="section__header">
+                    <h2 class="section__title">Мой профиль</h2>
+                    <p class="section__subtitle">Управление абонементами и история услуг</p>
+                </div>
+                
+                <div class="profile-content">
+                    <div class="profile-stats">
+                        <div class="stat-card">
+                            <div class="stat-card__number">2</div>
+                            <div class="stat-card__label">Активных собак</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">47</div>
+                            <div class="stat-card__label">Выполненных услуг</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">12,500₽</div>
+                            <div class="stat-card__label">Потрачено</div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-sections">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Мои абонементы</h3>
+                                <div class="subscription-item">
+                                    <div class="subscription-info">
+                                        <span class="subscription-dog">Барсик (Лабрадор)</span>
+                                        <span class="status status--success">Премиум</span>
+                                    </div>
+                                    <div class="subscription-actions">
+                                        <button class="btn btn--sm btn--primary" data-dog-id="1">Смотреть</button>
+                                    </div>
+                                </div>
+                                <div class="subscription-item">
+                                    <div class="subscription-info">
+                                        <span class="subscription-dog">Мурка (Овчарка)</span>
+                                        <span class="status status--warning">Базовый</span>
+                                    </div>
+                                    <div class="subscription-actions">
+                                        <button class="btn btn--sm btn--primary" data-dog-id="2">Смотреть</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>История услуг</h3>
+                                <div class="service-history">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <span class="service-name">Кормление</span>
+                                            <span class="service-time">10:30</span>
+                                        </div>
+                                        <span class="service-cost">50₽</span>
+                                    </div>
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <span class="service-name">Прогулка</span>
+                                            <span class="service-time">14:15</span>
+                                        </div>
+                                        <span class="service-cost">300₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Service Confirmation Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Подтверждение услуги</h3>
+                <button class="modal-close" id="closeServiceModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="service-details" id="serviceDetails">
+                    <!-- Service details will be populated by JavaScript -->
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn--primary" id="confirmService">Подтвердить</button>
+                    <button class="btn btn--secondary" id="cancelService">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Progress Modal -->
+    <div class="modal" id="progressModal">
+        <div class="modal-content modal-content--small">
+            <div class="modal-header">
+                <h3 class="modal-title">Выполнение услуги</h3>
+            </div>
+            <div class="modal-body">
+                <div class="progress-info" id="progressInfo">
+                    <!-- Progress info will be populated by JavaScript -->
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">Инициализация...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content modal-content--small">
+            <div class="modal-header">
+                <h3 class="modal-title">Успешно!</h3>
+                <button class="modal-close" id="closeSuccessModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="successMessage"></p>
+                <div class="rating-section" id="ratingSection" style="display: none;">
+                    <h4>Оцените работу персонала:</h4>
+                    <div class="rating-stars" id="ratingStars">
+                        <button class="star-btn" data-rating="1">⭐</button>
+                        <button class="star-btn" data-rating="2">⭐</button>
+                        <button class="star-btn" data-rating="3">⭐</button>
+                        <button class="star-btn" data-rating="4">⭐</button>
+                        <button class="star-btn" data-rating="5">⭐</button>
+                    </div>
+                    <textarea class="form-control" id="ratingComment" placeholder="Оставьте комментарий (опционально)"></textarea>
+                </div>
+                <button class="btn btn--primary btn--full-width" id="closeSuccessBtn">Понятно</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
